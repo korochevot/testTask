@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'LatoBold';
+    src: url('../fonts/Lato-Bold.eot');
+    src: url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Lato-Bold.woff2') format('woff2'),
+        url('../fonts/Lato-Bold.woff') format('woff'),
+        url('../fonts/Lato-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Regular.eot');
+    src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Lato-Regular.woff2') format('woff2'),
+        url('../fonts/Lato-Regular.woff') format('woff'),
+        url('../fonts/Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    margin: 0 auto;
+}
+
+.wrapper{
+    width: 920px;
+    margin: 0 auto;
+}
+
+.content-block{
+    padding-top: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.content-block__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25%;
+    height: 240px;
+    padding: 10px 25px 25px 25px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+
+.content-block__item:not(:last-of-type){
+	border-right: 1px solid #e8e8e8;
+}
+
+.content-block__logo{
+    width: 160px;
+    margin: 0 auto;
+}
+
+.content-block__item:nth-of-type(3) .content-block__logo{
+    width: 100px;
+}
+
+.content-block__title{
+    font-family: 'LatoBold';
+    font-size: 16px;
+    color: #585858;
+}
+
+.content-block__description{
+    font-family: 'Lato';
+    font-size: 12px;
+    color: #757575;
+}
+
+.content-block__button{
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #0073ae;
+    font-family: 'Lato';    
+    font-size: 14px;
+}
+
+.content-block__button:hover{
+    cursor: pointer;
+}
+
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.popup__block{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 640px;
+    height: 360px;
+    background-color: #000000;
+}
+
+.popup__close{
+    background-image: url('../img/cross.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -20px;
+    right: 0;
+}
+
+.popup__close:hover{
+    cursor: pointer;
+}
+
+@media(max-width: 920px){
+    .wrapper{
+        width: 100%;
+    }
+}
+
+@media(max-width: 768px){
+    .content-block{
+        flex-direction: column;
+        padding: 50px 0;
+    }
+
+    .content-block__item{
+        width: 300px;
+        margin: 20px auto;
+        border-right: 1px solid #e8e8e8;
+        border-left: 1px solid #e8e8e8;
+    }
+}
+
+@media(max-width: 650px){
+    .popup__block, .popup__video{
+        width: 100%;
+    }
+}
